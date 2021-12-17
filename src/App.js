@@ -1,11 +1,16 @@
-
-import './App.css';
-
+import React, { useState } from 'react';
+import data from './data';
+import List from './List';
 function App() {
+  const [people, setPeople] = useState(data);
   return (
-    <div className="App">
-      
-    </div>
+    <main>
+      <section className='container'>
+        <h3>{people.lenght} birthdays today </h3>
+        <List people={people} />
+        <button onClick={()=> console.log('You clicked me')}>clear all</button>
+      </section>
+    </main>
   );
 }
 
